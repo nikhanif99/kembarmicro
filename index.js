@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
   connect.getConnection(function (err, connection) {
     if (err) { res.send('Error Database Connection'); }
     else {
-      var sql = "SELECT * FROM client";
+      var sql = "SELECT CLIENTID AS 'EMAIL', CLIENTNAME AS 'NAME', CLIENTPHONENO AS 'PHONE NUMBER', CLIENTADDRESS AS 'ADDRESS' FROM client";
       connect.query(sql, function (err, result) {
         if (err) { throw err; }
         else {
